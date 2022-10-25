@@ -614,7 +614,7 @@ display: flex;
 }
 
 .container-social-list-footer{
-margin-top: 10px;
+margin-top: 12px;
 margin-left: 70px;
 }
 
@@ -870,6 +870,9 @@ transform: translateY(0);
     background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill, pointer;
 }
 
 .close-icon {
@@ -878,11 +881,15 @@ transform: translateY(0);
 
 .modal-close-button:hover .close-icon, 
 .modal-close-button:focus .close-icon {
-    fill: var(--accent);
+    fill: var(--blue);
     cursor: pointer;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill, pointer;
 }
 
 .form-title{
+    margin: 0;
 font-weight: 700;
 font-size: 20px;
 line-height: 23px;
@@ -892,6 +899,7 @@ letter-spacing: 0.03em;
 }
 
 .modal-form{
+    width: 100%;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -920,6 +928,7 @@ border-radius: 4px;
     padding-left: 42px;
     height: 40px;
     width: 100%;
+    cursor: pointer;
 }
 
 
@@ -931,7 +940,7 @@ border-radius: 4px;
     bottom: 0;
     left: 0;
     margin: auto;
-    padding: 15px;
+    padding: 40px;
     width: 528px;
     height: 581px;
     background-color: var(--white);
@@ -941,12 +950,8 @@ border-radius: 4px;
     justify-content: center;
 }
 
-#name, #phone, #email, #comment{
-    padding-left: 12px;
-}
-
 #comment{
-    padding-top: 14px;
+    padding: 12px 16px;
     resize: none;
     width: 100%;
     height: 100px;
@@ -963,34 +968,110 @@ border-radius: 4px;
 .modal-input:hover + .modal-icon,
 .modal-input:hover + .modal-icon{
     fill: var(--blue);
+    cursor: pointer;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill;
 }
 
 
 .modal-button{
-    
-    color: var(--white);
-    background-color: var(--blue);
-    border: none;
-    width: 200px;
+    display: block;
+color: var(--white);
+background-color: var(--blue);
+border: none;
+width: 200px;
 height: 50px;
 Weight: 700;
 font-size: 16px;
 Line-height: 30px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+letter-spacing: 0,06em;
 border-radius: 4px;
-margin-left: 164px;
+margin: 30px auto 0;
+cursor: pointer;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+    background: #188CE8;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.checkbox-lable p {
+margin: 0;
+font-weight: 400;
+line-height: calc(24/14);
+letter-spacing: 0.03em;
+font-size: 14px;
+}
+
+.checkbox-lable a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.new-checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--Black21);
+    border-radius: 2px;
+    margin-right: 7px;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-icon-check{
+    fill: var(--white);
+    opacity: 0;
+}
+
+.checkbox-lable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.checkbox:checked + .checkbox-lable .new-checkbox{
+    background-color: var(--blue);
+    border: var(--blue);
+}
+
+.checkbox:checked + .checkbox-lable .new-checkbox .modal-icon-check{
+    opacity: 1;
 }
 
 
-
+.form-container-footer{
+    margin-top: 12px;
+    margin-left: 93px;
+}
 
 
 .modal-form-footer{
+    gap: 12px;
+width: 100%;
 display: flex;
-/*justify-content: right;*/
+line-height: 0;
+margin: 0px;
 }
 
 .form-title-footer{
+    margin: 0;
+    margin-bottom: 20px;
 color: var(--white);
 font-weight: 700;
 font-size: 14px;
@@ -998,9 +1079,11 @@ line-height: 16px;
 letter-spacing: 0.03em;
 text-transform: uppercase;}
 
-.modal-container-footer{
-
-}
+/*.modal-container-footer{
+display: flex;
+justify-content: right;
+align-items: center;
+}*/
 
 .modal-lable-footer{
 display: block;
@@ -1017,12 +1100,17 @@ display: block;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     outline: transparent;
-    padding-left: 42px;
-    height: 40px;
-    width: 100%;
+    padding-left: 16px;
+    height: 50px;
+    background-color: #2F303A;
+    width: 358px;
 }
 
 .modal-button-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     width: 200px;
     height: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1036,12 +1124,9 @@ font-weight: 700;
 line-height: 30px;
 letter-spacing: 0.06em;
 text-align: center;
-
 }
+
 .modal-icon-footer{
 border-radius: 0px;
 fill: var(--white);
-right: 10px;
-justify-content: center;
-align-items: center;
 }
