@@ -1062,7 +1062,8 @@ font-size: 14px;
 
 
 .modal-form-footer{
-    gap: 12px;
+/*gap: 12px;*/
+
 width: 100%;
 display: flex;
 line-height: 0;
@@ -1105,6 +1106,7 @@ display: block;
     background-color: #2F303A;
     color: var(--white);
     width: 358px;
+    margin-right: 12px;
 }
 
 .modal-button-footer{
